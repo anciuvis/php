@@ -27,7 +27,16 @@
 					</div>
 				</form>
 			<?php else: ?>
-				<h2>Vertimas: <?php echo $wordEnd ?></h2>
+				<h2>Koki zodi verciame: <span style="text-decoration: underline"><?php echo $word ?></span></h2>
+				<h2>Is kurios kalbos: <span style="text-decoration: underline"><?php echo $language ?></span></h2>
+				<h2>I kuria kalba: <span style="text-decoration: underline"><?php echo $languageStart ?></span></h2>
+				<h2>Vertimas: <span style="text-decoration: underline">
+					<?php
+						foreach ($wordEnd as $value) {
+							echo $value.' ';
+						}
+					?>
+			</span></h2>
 				<a href="index.php" class="btn btn-primary">Atgal</a>
 			<?php endif;?>
 		</div>
