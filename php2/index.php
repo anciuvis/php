@@ -6,6 +6,7 @@
 
 	if(array_key_exists('language1',$_GET)) {
 		$language1 = $_GET['language1'];
+		$language1 = mb_convert_case($language1, MB_CASE_LOWER, "UTF-8");
 		if(array_key_exists('word1',$_GET)){
 			$word1 = $_GET['word1'];
 			$word1 = mb_convert_case($word1, MB_CASE_LOWER, "UTF-8");
