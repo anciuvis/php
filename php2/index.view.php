@@ -7,14 +7,14 @@
 	</head>
 	<body>
 		<div class="container">
-			<?php if ($language1==null|$word1==null): ?>
+			<?php if ($language1==null||$word1==null): ?>
 				<h2>Pasirink kalbas vertimui</h2>
 				<form action='index.php' method='GET'>
 					<div class="form-group">
 						<select class="form-control" name="language1">
 							<option value="" disabled selected hidden>select language</option>
-							<option value="lt">English</option>
-							<option value="en">Lithuanian</option>
+							<option value="lt">i anglu</option>
+							<option value="en">i lietuviu</option>
 						</select>
 						<!-- <select class="form-control" name="language2">
 							<option value="" disabled selected hidden>select translation language</option>
