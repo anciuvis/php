@@ -1,40 +1,9 @@
 <?php
 	function translation($language1, $language2, $wordCurrent) {
-
 		$zodynas = readCsv();
-
-		switch ($language1) {
-			case 'en':
-				foreach ($zodynas as $row) {
-					if($row['en'] == $wordCurrent) {
-            $word2 = $row[$language2];
-          }
-				}
-				break;
-
-			case 'lt':
-				foreach ($zodynas as $row) {
-					if($row['lt'] == $wordCurrent) {
-						$word2 = $row[$language2];
-					}
-				}
-				break;
-
-			case 'ru':
-				foreach ($zodynas as $row) {
-				if($row['ru'] == $wordCurrent) {
-					$word2 = $row[$language2];
-				}
-			}
-				break;
-
-			default:
-				$word2 = 'klaida';
-				break;
-		}
+		$word2 = translate ($zodynas, $language1, $language2, $wordCurrent);
 		return $word2;
 	}
-
 	function readCsv() {
 		$read = fopen('translate.csv', 'r');
 		$zodynas = [];
@@ -48,9 +17,30 @@
 			$i++;
 		}
 		fclose($read);
-		// die();
 		return $zodynas;
 	}
+	function translate ($zodynas, $language1, $language2, $wordCurrent) {
+		foreach ($zodynas as $row) {
+			if($wordCurrent === $row[$language1]) {
+				$word2 = $row[$language2];
+			}
+		}
+		return $word2;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		// $dictionaryLt = [

@@ -48,7 +48,6 @@
 			}
 		}
 	}
-
 	include 'index.view.php';
 
 ?>
