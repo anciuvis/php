@@ -12,14 +12,16 @@
 				<form action='index.php' method='GET'>
 					<div class="form-group">
 						<select class="form-control" name="language1">
-							<option value="" disabled selected hidden>select language</option>
-							<option value="lt">i anglu</option>
-							<option value="en">i lietuviu</option>
-						</select>
-						<!-- <select class="form-control" name="language2">
-							<option value="" disabled selected hidden>select translation language</option>
+							<option value="" disabled selected hidden>pradine kalba</option>
+							<option value="lt">Lithuanian</option>
 							<option value="en">English</option>
-							<option value="lt">Lithuanian</option> -->
+							<option value="ru">Russian</option>
+						</select>
+						<select class="form-control" name="language2">
+							<option value="" disabled selected hidden>i kokia kalba</option>
+							<option value="en">English</option>
+							<option value="lt">Lithuanian</option>
+							<option value="ru">Russian</option>
 						</select>
 						<label for="word1">Word</label>
 						<input type='text' class="form-control" name='word1' placeholder='Enter word'>
@@ -27,6 +29,26 @@
 					</div>
 				</form>
 			<?php else: ?>
+				<h2>Pasirink kalbas vertimui</h2>
+				<form action='index.php' method='GET'>
+					<div class="form-group">
+						<select class="form-control" name="language1">
+							<option value="" disabled selected hidden>pradine kalba</option>
+							<option value="lt">Lithuanian</option>
+							<option value="en">English</option>
+							<option value="ru">Russian</option>
+						</select>
+						<select class="form-control" name="language2">
+							<option value="" disabled selected hidden>i kokia kalba</option>
+							<option value="en">English</option>
+							<option value="lt">Lithuanian</option>
+							<option value="ru">Russian</option>
+						</select>
+						<label for="word1">Word</label>
+						<input type='text' class="form-control" name='word1' placeholder='Enter word'>
+						<button type='submit' class="btn btn-primary">Translate</button>
+					</div>
+				</form>
 				<h2>Koki zodi verciame: <span style="text-decoration: underline"><?php echo $word ?></span></h2>
 				<h2>Is kurios kalbos: <span style="text-decoration: underline"><?php echo $language ?></span></h2>
 				<h2>I kuria kalba: <span style="text-decoration: underline"><?php echo $languageStart ?></span></h2>
