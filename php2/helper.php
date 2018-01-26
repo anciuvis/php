@@ -22,7 +22,7 @@
 
 			case 'ru':
 				foreach ($zodynas as $row) {
-				if($row['lt'] == $wordCurrent) {
+				if($row['ru'] == $wordCurrent) {
 					$word2 = $row[$language2];
 				}
 			}
