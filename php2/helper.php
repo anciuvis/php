@@ -20,12 +20,29 @@
 		return $zodynas;
 	}
 	function translate ($zodynas, $language1, $language2, $wordCurrent) {
+		$word2 = 'tokio zodzio nera';
 		foreach ($zodynas as $row) {
 			if($wordCurrent === $row[$language1]) {
 				$word2 = $row[$language2];
 			}
 		}
 		return $word2;
+	}
+	function addToDict ($wordLt, $wordEn, $wordRu) {
+		$mas = [
+			'lt' => $wordLt,
+			'en' => $wordEn,
+			'ru' => $wordRu
+		];
+		$write = fopen ('translate.csv', 'a');
+		fputcsv($write,[
+			$mas['lt'],
+			$mas['en'],
+			$mas['ru']
+		]);
+		fclose($write);
+		$msg = 'Prideta';
+		return $msg;
 	}
 
 
