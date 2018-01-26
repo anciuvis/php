@@ -35,6 +35,24 @@
 		return $word2;
 	}
 
+	function readCsv() {
+		$read = fopen('translate.csv', 'r');
+		$zodynas = [];
+		$i = 0;
+		while (($a= fgetcsv($read))!== false) {
+			$zodynas[]=[
+				'lt'=> $a[0],
+				'en'=> $a[1],
+				'ru'=> $a[2]
+			];
+			$i++;
+		}
+		fclose($read);
+		// die();
+		return $zodynas;
+	}
+
+
 		// $dictionaryLt = [
 		// 	'labas' => ['en' => 'hello', 'ru' => 'privet'],
 		// 	'masina' => ['en' => 'car', 'ru' => 'mashina'],
@@ -88,24 +106,6 @@
 	// 			break;
   //
 	// 	}
-
-function readCsv() {
-$read = fopen('translate.csv', 'r');
-$zodynas = [];
-$i = 0;
-while (($a= fgetcsv($read))!== false) {
-    $zodynas[]=[
-        'lt'=> $a[0],
-        'en'=> $a[1],
-				'ru'=> $a[2]
-    ];
-    $i++;
-}
-fclose($read);
-die();
-return $zodynas;
-}
-
 // function chooseDict ($wordCurrent, $language2, $dictionary) {
 // 	switch ($language2) {
 // 		case 'lt':
@@ -123,5 +123,4 @@ return $zodynas;
 // 	}
 // 	return $word2;
 // }
-
 ?>
