@@ -16,9 +16,7 @@
 				<tbody>
 					<?php
 						foreach ($toDo as $key => $value) {
-
-							echo '<tr><td>'.$value['title'].'</td><td><a href="deleteTask.php?id=<?php echo $key ?>" class="btn btn-primary">Delete</a></td></tr>';
-
+							echo '<tr><td>'.$value['title'].' '.$value['desc'].' '.$value['deadline'].' '.$value['priority'].' </td><td><a href="deleteTask.php?id='.$key.'" class="btn btn-primary">Delete</a><a href="editTask.php?id='.$key.'" class="btn btn-primary">Edit</a></td></tr>';
 						} ?>
 						<?php
 						// $i=0;

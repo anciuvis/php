@@ -17,7 +17,6 @@ function getCsvFile() {
 	return $toDo;
 }
 function addToList ($title, $desc, $deadline, $priority) {
-
 	$write = fopen ('todolist.csv', 'a');
 	fputcsv($write,[
 		$title,
@@ -27,5 +26,14 @@ function addToList ($title, $desc, $deadline, $priority) {
 		'no'
 	]);
 	fclose($write);
+}
+function addArrayToCsv($toDo) {
+	$write = fopen ('todolist.csv', 'w+');
+
+	for ($i=0; $i < count($toDo) ; $i++) {
+
+		fputcsv ($write, $toDo[$i]);
+	}
+	fclose ($write);
 }
  ?>

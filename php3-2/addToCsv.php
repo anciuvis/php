@@ -7,5 +7,4 @@
 	$priority = $_POST['priority'];
 	addToList($title, $desc, $deadline, $priority);
 	header('Location:index.php');
-
  ?>
