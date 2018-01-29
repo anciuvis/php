@@ -2,7 +2,7 @@
 
 include 'function.php';
 
-$mas=getCsvFile();
+$toDo=getCsvFile();
 
 include 'index.view.php';
 
