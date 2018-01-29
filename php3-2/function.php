@@ -16,24 +16,16 @@ function getCsvFile() {
 	fclose($read);
 	return $toDo;
 }
-function addToList ($title, $desc, $deadline, $priority, $done) {
-	$mas = [
-		'title'=> $title,
-		'desc'=> $desc,
-		'deadline'=> $deadline,
-		'priority'=> $priority,
-		'done'=> $done
-	];
+function addToList ($title, $desc, $deadline, $priority) {
+
 	$write = fopen ('todolist.csv', 'a');
 	fputcsv($write,[
-		$mas['title'],
-		$mas['description'],
-		$mas['deadline'],
-		$mas['priority'],
-		$mas['done']
+		$title,
+		$desc,
+		$deadline,
+		$priority,
+		'no'
 	]);
 	fclose($write);
-	$msg = 'Prideta';
-	return $msg;
 }
  ?>

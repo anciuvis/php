@@ -1,3 +1,5 @@
-$( document ).ready(myFunction() {
-	$("tr").toggleClass("hidden");
-});
+// $( document ).ready(function() {
+// 	$( 'tr' ).click(function () {
+// 		$("tr").toggleClass( 'hidden' );
+// 	});
+// });
