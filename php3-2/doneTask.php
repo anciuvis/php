@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	include 'function.php';
+	$id = $_GET['id'];
 
 
 
@@ -10,4 +12,5 @@
 		'class'=>'success'
 	];
 	header('Location:index.php');
+	exit;
  ?>
