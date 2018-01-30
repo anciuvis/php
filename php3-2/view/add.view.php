@@ -49,8 +49,8 @@
 				</div>
 				<div class="row">
 					<label class="col-md-2" for="priority">Priority: </label>
-					<input type="radio" id="prior-high" name="priority" value="high"/><label for="prior-high">High</label>
-					<input type="radio" id="prior-low" name="priority" value="low"/><label for="prior-low">Low</label>
+					<input type="radio" name="priority" value="high"/><label for="prior-high">High</label>
+					<input type="radio" name="priority" value="low"/><label for="prior-low">Low</label>
 				</div>
 				<button type='submit' id="btn-add" class="btn btn-info">Add task</button>
 			</form>

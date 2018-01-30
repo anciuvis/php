@@ -15,8 +15,8 @@
 				</thead>
 				<tbody>
 					<?php if(isset($_SESSION['msg'])): ?>
-						<div class="alert alert-info" role="alert">
-							<?php echo $_SESSION['msg'] ?>
+						<div class="alert alert-<?php echo $_SESSION['msg']['class'] ?>" role="alert">
+							<?php echo $_SESSION['msg']['message'] ?>
 						</div>
 							<?php unset ($_SESSION['msg']); ?>
 					<?php endif; ?>

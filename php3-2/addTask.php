@@ -8,6 +8,9 @@
 	$deadline=date('d-m-Y', $deadline);
 	$priority = $_POST['priority'];
 	addToList($title, $desc, $deadline, $priority);
-	$_SESSION['msg']='Added successfully';
+	$_SESSION['msg']=[
+		'message'=>'added ok',
+		'class'=>'info'
+	];
 	header('Location:index.php');
  ?>

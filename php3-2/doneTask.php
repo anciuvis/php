@@ -5,6 +5,9 @@
 
 
 
-	$_SESSION['msg']='Done successfully!';
+	$_SESSION['msg']=[
+		'message'=>'Done successfully!',
+		'class'=>'success'
+	];
 	header('Location:index.php');
  ?>

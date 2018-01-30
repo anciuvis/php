@@ -7,8 +7,10 @@
 
 	unset($toDo[$id]);
 	addArrayToCsv($toDo);
+	$_SESSION['msg'] = [
+		'message'=>'Deleted successfully',
+		'class'=>'danger'
+	];
 	header('Location:index.php');
 	exit;
-	$_SESSION['msg']='Deleted successfully';
-	header('Location:index.php');
  ?>
