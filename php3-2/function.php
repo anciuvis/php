@@ -28,11 +28,9 @@ function addToList ($title, $desc, $deadline, $priority) {
 	fclose($write);
 }
 function addArrayToCsv($toDo) {
-	$write = fopen ('todolist.csv', 'w+');
-
-	for ($i=0; $i < count($toDo) ; $i++) {
-
-		fputcsv ($write, $toDo[$i]);
+	$write = fopen ('todolist.csv', 'w');
+	foreach ($toDo as $fields) {
+		fputcsv ($write, $fields);
 	}
 	fclose ($write);
 }
