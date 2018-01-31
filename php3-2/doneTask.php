@@ -2,8 +2,9 @@
 	session_start();
 	include 'function.php';
 	$id = $_GET['id'];
-
-
+	$toDo = getCsvFile();
+	$toDo[$id]['done'] = 'yes';
+	addArrayToCsv($toDo);
 
 
 

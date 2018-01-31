@@ -34,9 +34,13 @@ function addArrayToCsv($toDo) {
 	}
 	fclose ($write);
 }
-function edit($id) {
-
-
+function updToList ($id, $title, $desc, $deadline, $priority) {
+	$arr = getCsvFile();
+	$arr[$id]['title']=$title;
+	$arr[$id]['desc']=$desc;
+	$arr[$id]['deadline']=$deadline;
+	$arr[$id]['priority']=$priority;
+	addArrayToCsv($arr);
 }
 
  ?>

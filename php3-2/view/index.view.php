@@ -3,6 +3,7 @@
 		<meta charset="utf-8">
 		<title>ToDoList PHP</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<div class="container">
@@ -24,10 +25,10 @@
 					<?php	for ($i=$from; $i <=$till ; $i++): ?>
 							<tr><td class="font-weight-bold">
 								<?php echo htmlspecialchars($toDo[$i]['title'])?>
+							</td><td class="<?php echo $toDo[$i]['done']?>">
+								<?php echo htmlspecialchars($toDo[$i]['desc']).' '.htmlspecialchars(date('d-m-Y', $toDo[$i]['deadline'])).' '.htmlspecialchars($toDo[$i]['priority'])?>
 							</td><td>
-								<?php echo htmlspecialchars($toDo[$i]['desc']).' '.htmlspecialchars($toDo[$i]['deadline']).' '.htmlspecialchars($toDo[$i]['priority'])?>
-							</td><td>
-								<a href="../deleteTask.php?id=<?php echo $i ?>" class="btn btn-danger">Delete</a><a href="../editTask.php?id=<?php echo $i ?>" class="btn btn-primary">Edit</a><a href="../doneTask.php?id=<?php echo $i ?>" class="btn btn-success">Done</a></td></tr>
+								<a href="../deleteTask.php?id=<?php echo $i ?>" class="btn btn-danger">Delete</a><a href="editTask.php?id=<?php echo $i ?>" class="btn btn-primary">Edit</a><a href="../doneTask.php?id=<?php echo $i ?>" class="btn btn-success">Done</a></td></tr>
 					<?php endfor; ?>
 				</tbody>
 			</table>

@@ -7,12 +7,18 @@ $count = count($toDo);
 $perPage = 4;
 $pageCount = ceil($count/$perPage);
 // echo $pageCount;
-$psl = 1;
+
+if (array_key_exists("psl", $_GET)) {
+	$psl = $_GET['psl'];
+} else {
+	$psl = 1;
+}
 
 $from = $perPage*($psl-1);
 $till = $perPage*$psl-1;
-if ($till > $count) {
-	$till = $count;
+if ($till > ($count-1)) {
+	$till = $count-1;
 }
+
 include 'view/index.view.php';
 ?>
